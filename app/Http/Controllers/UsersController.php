@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Roles;
+use App\User;
 
-class RolesController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Roles::all();
-
-        return view('roles.index',compact('roles',$roles));
+        $users = User::all();
+        return view('users.index', compact('users',$users));
     }
 
     /**
@@ -48,7 +47,7 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        //
     }
 
     /**
@@ -59,8 +58,8 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $role = Roles::find($id);
-        return view('roles.edit',compact('role',$role));
+        $user = User::find($id);
+        return view('users.edit',compact('user',$user));
     }
 
     /**
@@ -72,20 +71,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $roles = Roles::where([
-            ['id','=',$request->id],
-            ])->get()->first();
-        if($roles !== null){  
-            $this->validate($request,[
-                'name' => 'required|regex:/^[\pL\s\-]+$/u',
-            ]);
-            $role = Roles::find($request->id);
-            $role -> name = $request -> input('name');
-            $role -> save();
-            return "success";
-        }else{
-            return "error";   
-        }
+        //
     }
 
     /**

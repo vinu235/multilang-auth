@@ -19,11 +19,9 @@ return [
     'email' => 'EMAIL',
     'password' => 'PASSWORD',
     'confirm' => 'CONFIRM',
-    'create' => 'CREATE',
-    'cancel' => 'CANCEL',
     'register' => 'REGISTER',
     'login' => 'LOGIN',
-    'role' => 'ROLE',
     'remember' => 'REMEMBER ME',
     'forgot_pass' => 'FORGOT YOUR PASSWORD?', 
+    'logout' => 'LOGOUT',
 ];

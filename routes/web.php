@@ -24,3 +24,7 @@ Route::get('setlocale/{locale}', function ($locale) {
     }
     return redirect()->back();
   });
+
+Route::get('/roles/all','Auth\RegisterController@getRoles');
+Route::resource('/roles','RolesController');
+Route::resource('/users','UsersController');

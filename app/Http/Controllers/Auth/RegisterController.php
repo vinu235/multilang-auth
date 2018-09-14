@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Roles;
 
 class RegisterController extends Controller
 {
@@ -69,5 +70,10 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'roleid' => $data['roleid'],
         ]);
+    }
+    public function getRoles()
+    {
+        $roles = Roles::all();
+        return $roles;
     }
 }

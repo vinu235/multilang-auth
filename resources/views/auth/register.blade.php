@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+<br><br><br><br>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">@lang('auth.register')</div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">@lang('app.user') @lang('auth.register')</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -62,10 +64,12 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('roleid') ? ' has-error' : '' }}">
-                            <label for="roleid" class="col-md-4 control-label">@lang('auth.role') </label>
+                            <label for="roleid" class="col-md-4 control-label">@lang('app.role') </label>
 
                             <div class="col-md-6">
-                                <input id="roleid" type="text" class="form-control" name="roleid" value="{{ old('roleid') }}" required autofocus>
+                                <select name="roleid" id="roleid" class="form-control" required autofocus>
+                                    
+                                </select>
 
                                 @if ($errors->has('roleid'))
                                     <span class="help-block">
@@ -88,4 +92,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: "/roles/all",
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+                res.forEach(data => {
+                    $('#roleid').append($('<option>', {value:data.id, text:data.name}));
+                });
+            }
+        });
+    });
+</script>
+
 @endsection
