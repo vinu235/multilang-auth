@@ -30,7 +30,11 @@
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.10.16/api/sum().js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-
+    <style>
+        th{
+            font-size: 10pt;
+        }
+    </style>
 </head>
 <body>
     @include('layouts.navigations') 

@@ -10,4 +10,7 @@ class Roles extends Model
         'role',
     ];
 
+    public function Users(){
+        return $this -> hasMany('App\Users');
+    }
 }

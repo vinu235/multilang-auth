@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Roles(){
+        return $this -> belongsTo('App\Roles');
+    }
+
+    public function Worksheet(){
+        return $this -> hasOne('App\Worksheets');
+    }
 }

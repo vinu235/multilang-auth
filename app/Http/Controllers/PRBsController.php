@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Roles;
 
-class RolesController extends Controller
+class PRBsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Roles::all();
+        //$outwards = Inwards::all();
 
-        return view('roles.index',compact('roles',$roles));
+        return view('prb.index');
     }
 
     /**
@@ -26,7 +25,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('roles.create');
+        //
     }
 
     /**
@@ -37,7 +36,7 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        return '..';
+        //
     }
 
     /**
@@ -48,7 +47,7 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        //
     }
 
     /**
@@ -59,8 +58,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $role = Roles::find($id);
-        return view('roles.edit',compact('role',$role));
+        //
     }
 
     /**
@@ -72,20 +70,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $roles = Roles::where([
-            ['id','=',$request->id],
-            ])->get()->first();
-        if($roles !== null){  
-            $this->validate($request,[
-                'name' => 'required|regex:/^[\pL\s\-]+$/u',
-            ]);
-            $role = Roles::find($request->id);
-            $role -> name = $request -> input('name');
-            $role -> save();
-            return "success";
-        }else{
-            return "error";   
-        }
+        //
     }
 
     /**

@@ -19,7 +19,7 @@
                     <td>{{ $user -> username }}</td>
                     <td>{{ $user -> email }}</td>
                     <td style="width:85px;">
-                        <a onclick="$('#users_view').load('{{url('/users/'. $user -> id .'/edit')}}');" title="@lang('app.edit')" style="text-decoration:none;cursor: pointer;"> <i class="far fa-edit" style="font-size:20px;"></i> </a> 
+                        <a onclick="$('#users_view').load('{{url('/users/'. $user -> id .'/edit')}}');" title="@lang('app.edit')" style="text-decoration:none;cursor: pointer;"> <i class="far fa-edit" style="font-size:20px;"></i></a> 
                         {{--<a href="/users/{{ $user -> id }}" title="@lang('app.view')" style="text-decoration:none;"> <i class="far fa-eye" style="font-size:20px;"></i> </a> 
                          <a href="/roles/{{ $role -> id }}" title="@lang('app.delete')" style="text-decoration:none;"> <i class="far fa-trash-alt" style="font-size:20px;"></i> </a>  --}}
                     </td>

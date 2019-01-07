@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Roles;
+use App\Letters;
+use App\Inwards;
 
-class RolesController extends Controller
+class InwardsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Roles::all();
+        $inwards = Inwards::all();
 
-        return view('roles.index',compact('roles',$roles));
+        return view('inwards.index',compact('inwards', $inwards));
     }
 
     /**
@@ -26,7 +27,9 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('roles.create');
+        $inward_cnt = Inwards::count();
+        
+        return view('inwards.create',compact('inward_cnt',$inward_cnt));
     }
 
     /**
@@ -37,7 +40,7 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        return '..';
+        //
     }
 
     /**
@@ -48,7 +51,7 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        return $id;
+        //
     }
 
     /**
@@ -59,8 +62,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $role = Roles::find($id);
-        return view('roles.edit',compact('role',$role));
+        //
     }
 
     /**
@@ -72,20 +74,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $roles = Roles::where([
-            ['id','=',$request->id],
-            ])->get()->first();
-        if($roles !== null){  
-            $this->validate($request,[
-                'name' => 'required|regex:/^[\pL\s\-]+$/u',
-            ]);
-            $role = Roles::find($request->id);
-            $role -> name = $request -> input('name');
-            $role -> save();
-            return "success";
-        }else{
-            return "error";   
-        }
+        //
     }
 
     /**

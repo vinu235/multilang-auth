@@ -24,4 +24,5 @@ return [
     'remember' => 'REMEMBER ME',
     'forgot_pass' => 'FORGOT YOUR PASSWORD?', 
     'logout' => 'LOGOUT',
+    'reset' => 'RESET',
 ];

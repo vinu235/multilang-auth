@@ -28,3 +28,10 @@ Route::get('setlocale/{locale}', function ($locale) {
 Route::get('/roles/all','Auth\RegisterController@getRoles');
 Route::resource('/roles','RolesController');
 Route::resource('/users','UsersController');
+Route::resource('/worksheets','WorksheetsController');
+Route::resource('/letters','LettersController');
+Route::resource('/inwards','InwardsController');
+Route::resource('/outwards','OutwardsController');
+Route::resource('/pra','PRAsController');
+Route::resource('/prb','PRBsController');
+Route::resource('/reports','ReportsController');

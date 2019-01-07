@@ -45,10 +45,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     @lang('auth.login')
                                 </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    @lang('auth.forgot_pass')
-                                </a>
+                                <button type="reset" class="btn btn-danger">
+                                    @lang('auth.reset')
+                                </button>
                             </div>
                         </div>
                     </form>

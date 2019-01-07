@@ -30,8 +30,30 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="/profile">@lang('app.profile')</a></li>
-                <li><a href="/worksheet">@lang('app.worksheet')</a></li>
+                {{-- <li><a href="/profiles">@lang('app.profile')</a></li> --}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                        @lang('app.letters')
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/letters">
+                                @lang('app.letter') @lang('app.management')
+                            </a>
+                            <a href="/inwards">
+                                @lang('app.inward') @lang('app.management')
+                            </a>
+                            <a href="/outwards">
+                                @lang('app.outward') @lang('app.management')
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+               <li><a href="/worksheets">@lang('app.worksheet')</a></li>
+               <li><a href="/pra">@lang('app.pra')</a></li>
+               <li><a href="/prb">@lang('app.prb')</a></li>
+               <li><a href="/reports">@lang('app.reports')</a></li>
             @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">
